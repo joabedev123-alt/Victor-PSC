@@ -76,8 +76,7 @@ const Sobre = () => {
           </FadeUp>
           <FadeUp delay={0.2}>
             <div style={{ height: '650px', borderRadius: '16px', background: 'var(--color-bg-alt)', boxShadow: '0 15px 35px rgba(0,0,0,0.03)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'var(--color-secondary)', opacity: 0.1 }}></div>
-              <Quotes size={120} color="var(--color-secondary)" style={{ position: 'absolute', top: '-20px', right: '-20px', opacity: 0.2 }} weight="fill" />
+              <img src="/Profissionais/Fotos pessoais/26B97E0E-2366-4892-9340-23C86E2FBB0D.jpeg" alt="Trajetória de Victor Morais" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </FadeUp>
         </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle, Heart, Plus, Minus, ArrowRight, UserCircle, Users, Activity, Sparkle, ChatCircle, Globe } from 'phosphor-react';
+import { CheckCircle, Heart, Plus, Minus, ArrowRight, UserCircle, Users, Activity, Sparkle, ChatCircle, Globe, Shield, Eye } from 'phosphor-react';
 import { Link } from 'react-router-dom';
 
 const FadeUp = ({ children, delay = 0 }) => (
@@ -66,8 +66,7 @@ const Sexologia = () => {
               overflow: 'hidden',
               boxShadow: '0 20px 40px rgba(0,0,0,0.05)'
             }}>
-              {/* Imagem Placeholder */}
-              <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, var(--color-brown-main), var(--color-secondary))', opacity: 0.6 }}></div>
+              <img src="/Profissionais 2/Profissionais 2/4F8B6EA4-6BDF-4709-9657-8FC99223DE66.JPG" alt="Sexologia Clínica" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </FadeUp>
         </div>
@@ -86,7 +85,7 @@ const Sexologia = () => {
           </FadeUp>
           <FadeUp>
             <div style={{ height: '500px', borderRadius: '16px', backgroundColor: 'var(--color-bg-alt)', boxShadow: '0 15px 35px rgba(0,0,0,0.03)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'var(--color-secondary)', opacity: 0.2 }}></div>
+              <img src="/Profissionais 2/Profissionais 2/D0A156B8-6F6C-4BB0-8D9B-3F3F87584E03.JPG" alt="Olhar integral sobre sexualidade" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </FadeUp>
         </div>
@@ -106,7 +105,10 @@ const Sexologia = () => {
               { title: 'Autoestima e Autoconfiança', desc: 'Fortalecer a relação consigo mesmo e com o próprio corpo.', icon: <UserCircle size={40} color="var(--color-brown-main)" weight="thin" /> },
               { title: 'Ansiedade e Sexualidade', desc: 'Entender como fatores emocionais podem influenciar a vida íntima.', icon: <Activity size={40} color="var(--color-brown-main)" weight="thin" /> },
               { title: 'Intimidade e Conexão', desc: 'Promover maior proximidade emocional e afetiva.', icon: <Heart size={40} color="var(--color-brown-main)" weight="thin" /> },
-              { title: 'Conflitos Relacionados à Sexualidade', desc: 'Um espaço de acolhimento e reflexão livre de julgamentos.', icon: <ChatCircle size={40} color="var(--color-brown-main)" weight="thin" /> }
+              { title: 'Conflitos Relacionados à Sexualidade', desc: 'Um espaço de acolhimento e reflexão livre de julgamentos.', icon: <ChatCircle size={40} color="var(--color-brown-main)" weight="thin" /> },
+              { title: 'Disfunções Sexuais', desc: 'Trabalhar questões relacionadas ao desejo, excitação, resposta sexual e dificuldades na experiência íntima.', icon: <Activity size={40} color="var(--color-brown-main)" weight="thin" /> },
+              { title: 'Traumas e Experiências Difíceis', desc: 'Elaborar experiências passadas que impactam a relação com o corpo, a intimidade e os relacionamentos.', icon: <Shield size={40} color="var(--color-brown-main)" weight="thin" /> },
+              { title: 'Consumo Compulsivo de Pornografia', desc: 'Compreender a relação com o consumo de pornografia, identificar padrões de uso, impactos na intimidade, no desejo sexual e no bem-estar emocional.', icon: <Eye size={40} color="var(--color-brown-main)" weight="thin" /> }
             ].map((item, idx) => (
               <FadeUp delay={idx * 0.1} key={idx}>
                 <div style={{
@@ -159,12 +161,14 @@ const Sexologia = () => {
                   backgroundColor: '#fff',
                   borderRadius: '16px',
                   overflow: 'hidden',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.03)'
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%'
                 }}>
-                  <div style={{ height: '180px', backgroundColor: 'var(--color-secondary)', opacity: 0.3 }}></div>
-                  <div style={{ padding: '2rem' }}>
+                  <div style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                     <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--color-brown-deep)' }}>{demanda.title}</h3>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--color-text)', marginBottom: 0 }}>{demanda.desc}</p>
+                    <p style={{ fontSize: '1.05rem', color: 'var(--color-text)', margin: 0, flexGrow: 1 }}>{demanda.desc}</p>
                   </div>
                 </div>
               </FadeUp>
@@ -221,31 +225,6 @@ const Sexologia = () => {
         </div>
       </section>
 
-      {/* ATENDIMENTO ONLINE */}
-      <section className="section">
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
-          <div>
-            <FadeUp>
-              <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--color-brown-deep)' }}>
-                Atendimento online para todo o Brasil e brasileiros que vivem no exterior.
-              </h2>
-              <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--color-text)' }}>
-                As consultas são realizadas em ambiente seguro, reservado e sigiloso, oferecendo conforto e praticidade, sem abrir mão da qualidade do acompanhamento psicológico.
-              </p>
-              <p style={{ fontSize: '1.1rem', margin: 0, color: 'var(--color-text)' }}>
-                Todo o processo ocorre com ética, acolhimento e respeito à individualidade de cada paciente.
-              </p>
-            </FadeUp>
-          </div>
-          <div>
-            <FadeUp delay={0.2}>
-              <div style={{ height: '400px', borderRadius: '16px', backgroundColor: 'var(--color-secondary)', opacity: 0.3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Globe size={120} color="var(--color-brown-deep)" weight="thin" opacity={0.5} />
-              </div>
-            </FadeUp>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="section section-bg-white">

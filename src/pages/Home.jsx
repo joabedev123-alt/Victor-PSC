@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CaretDown, CheckCircle, Plus, Minus } from 'phosphor-react';
+import { CaretDown, CheckCircle, Plus, Minus, InstagramLogo } from 'phosphor-react';
 import { Link } from 'react-router-dom';
 
 const FadeUp = ({ children, delay = 0 }) => (
@@ -125,10 +125,7 @@ const Home = () => {
               { title: 'Relacionamentos', desc: 'Reflexão e elaboração de conflitos afetivos, familiares e conjugais.' },
               { title: 'Questões de Gênero', desc: 'Atendimento acolhedor para questões relacionadas à sexualidade, identidade de gênero, relacionamentos e saúde mental.' },
               { title: 'Luto e Transformações da Vida', desc: 'Acompanhamento em momentos de perda, rupturas e mudanças que exigem novas formas de existir.' },
-              { title: 'Dependência Emocional', desc: 'Reflexão sobre vínculos marcados pelo medo da rejeição, da solidão e pela dificuldade de estabelecer limites.' },
-              { title: 'Burnout e Exaustão Emocional', desc: 'Acolhimento para quem vive sobrecarregado, enfrenta dificuldades para desacelerar ou se sente constantemente esgotado.' },
-              { title: 'Autoestima e Autocrítica', desc: 'Compreenda a relação que você constrói consigo mesmo e os impactos da autocrítica excessiva no seu bem-estar.' },
-              { title: 'Hiperconectividade', desc: 'Compreensão sobre os impactos das redes sociais, da hiperconectividade e das exigências contemporâneas na saúde mental.' }
+              { title: 'Dependência Emocional', desc: 'Reflexão sobre vínculos marcados pelo medo da rejeição, da solidão e pela dificuldade de estabelecer limites.' }
             ].map((demanda, idx) => (
               <FadeUp delay={idx * 0.1} key={demanda.title}>
                 <div style={{
@@ -140,11 +137,9 @@ const Home = () => {
                   flexDirection: 'column',
                   height: '100%'
                 }}>
-                  <div style={{ height: '200px', backgroundColor: 'var(--color-secondary)', opacity: 0.3 }}></div>
-                  <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                    <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>{demanda.title}</h3>
-                    <p style={{ fontSize: '0.95rem', flexGrow: 1 }}>{demanda.desc}</p>
-                    <Link to="/demandas" style={{ color: 'var(--color-brown-main)', fontWeight: 500, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '1rem' }}>Saiba mais →</Link>
+                  <div style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                    <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem', color: 'var(--color-brown-deep)' }}>{demanda.title}</h3>
+                    <p style={{ fontSize: '1.05rem', margin: 0, color: 'var(--color-text)', flexGrow: 1 }}>{demanda.desc}</p>
                   </div>
                 </div>
               </FadeUp>
@@ -216,7 +211,7 @@ const Home = () => {
               overflow: 'hidden',
               boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
             }}>
-              <img src="/foto-1402.jpg" alt="Atendimento" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/Profissionais 2/Profissionais 2/48DFD5F2-6ECF-4DE5-A3C4-CB46289A56EF.JPG" alt="Atendimento" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </FadeUp>
         </div>
@@ -236,9 +231,122 @@ const Home = () => {
             <p style={{ marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto', color: 'var(--color-text)' }}>
               Acompanhe as avaliações publicadas no Google e conheça os relatos de quem confiou em meu trabalho.
             </p>
-            <a href="https://share.google/bc86hTB4oMbV5QdZL" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Ver depoimentos no Google
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              marginBottom: '3rem',
+              textAlign: 'left'
+            }}>
+              {[
+                { name: 'Igor Magalhães', time: 'um mês atrás', text: 'Profissional excelente. Comprometido com seus pacientes. Muito atento aos detalhes e com um poder de escuta diferenciado. Um ser humano íntegro e preocupado com as causas sociais que afetam o psicológico das pessoas. Parabéns e obrigado pelo seu trabalho!' },
+                { name: 'Flora Araújo', time: 'um mês atrás', text: 'Victor é um profissional excelente ético e comprometido com trabalho. eu super indico o seu trabalho eu já saí de várias sessões chorando de tão bem que me faz e de tão produtiva é a terapia São 50 minutos que mudam a nossa vida' },
+                { name: 'Nicole Araújo', time: 'um mês atrás', text: 'Um profissional excepcional! Desde o primeiro atendimento, transmite acolhimento, empatia e muita segurança. Sua forma de conduzir as sessões é leve, respeitosa e ao mesmo tempo extremamente eficaz. É nítido o cuidado genuíno com cada detalhe.' }
+              ].map((review, idx) => (
+                <FadeUp delay={idx * 0.1} key={idx}>
+                  <a 
+                    href="https://share.google/PFzV9qUqs5rc2Bd0n" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    style={{
+                      display: 'block',
+                      backgroundColor: '#fff',
+                      padding: '2rem',
+                      borderRadius: '16px',
+                      boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
+                      height: '100%',
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-5px)';
+                      e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.06)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.03)';
+                    }}
+                  >
+                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1rem' }}>
+                      <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--color-brown-main)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1.2rem' }}>
+                        {review.name.charAt(0)}
+                      </div>
+                      <div>
+                        <h3 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--color-brown-deep)' }}>{review.name}</h3>
+                        <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--color-text)', opacity: 0.7 }}>{review.time}</p>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.2rem', color: '#FABB05', fontSize: '1rem', marginBottom: '1rem' }}>
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--color-text)', margin: 0, lineHeight: 1.6 }}>"{review.text}"</p>
+                  </a>
+                </FadeUp>
+              ))}
+            </div>
+
+            <a href="https://share.google/PFzV9qUqs5rc2Bd0n" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              Ver mais depoimentos no Google
             </a>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* INSTAGRAM */}
+      <section className="section" style={{ backgroundColor: 'var(--color-bg-main)' }}>
+        <div className="container text-center">
+          <FadeUp>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--color-brown-deep)' }}>Acompanhe no Instagram</h2>
+            <p style={{ maxWidth: '600px', margin: '0 auto 3rem auto', color: 'var(--color-text)' }}>
+              Compartilho reflexões diárias sobre saúde mental, psicanálise e bem-estar emocional.
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '1.5rem',
+              maxWidth: '900px',
+              margin: '0 auto',
+              width: '100%'
+            }}>
+              {[
+                '/Profissionais/Fotos pessoais/IMG_2557.jpeg',
+                '/Profissionais/Fotos pessoais/26B97E0E-2366-4892-9340-23C86E2FBB0D.jpeg',
+                '/Profissionais/Fotos pessoais/BC7E9C1C-3F71-494A-BF65-1FBD59B5FA64.JPG'
+              ].map((img, idx) => (
+                <a 
+                  key={idx} 
+                  href="https://www.instagram.com/psi.victormorais" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    aspectRatio: '1/1',
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    boxShadow: '0 10px 20px rgba(0,0,0,0.05)',
+                    transition: 'transform 0.3s ease, filter 0.3s ease'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-5px)';
+                    e.currentTarget.style.filter = 'brightness(0.9)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.filter = 'brightness(1)';
+                  }}
+                >
+                  <img src={img} alt={`Post Instagram ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </a>
+              ))}
+            </div>
+            <div style={{ marginTop: '3rem' }}>
+              <a href="https://www.instagram.com/psi.victormorais" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                <InstagramLogo size={20} /> Seguir @psi.victormorais
+              </a>
+            </div>
           </FadeUp>
         </div>
       </section>

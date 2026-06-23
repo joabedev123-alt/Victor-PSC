@@ -74,7 +74,9 @@ const Psicoterapia = () => {
       <section className="section">
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
           <FadeUp>
-            <div style={{ height: '600px', borderRadius: '16px', backgroundColor: 'var(--color-secondary)', opacity: 0.3 }}></div>
+            <div style={{ height: '600px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.03)' }}>
+              <img src="/Profissionais/Fotos pessoais/5FBA80EC-0AEB-415C-95CC-D45D31868D22.png" alt="O que é Psicoterapia" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--color-brown-deep)' }}>O que é a psicoterapia?</h2>
@@ -230,7 +232,9 @@ const Psicoterapia = () => {
           
           <div>
             <FadeUp>
-              <div style={{ height: '300px', borderRadius: '16px', backgroundColor: 'var(--color-secondary)', opacity: 0.3, marginBottom: '2rem' }}></div>
+              <div style={{ height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '2rem' }}>
+                <img src="/Profissionais/Fotos pessoais/5FBA80EC-0AEB-415C-95CC-D45D31868D22.png" alt="Mapa do Brasil" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+              </div>
               <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--color-brown-deep)' }}>Psicoterapia online para todo o Brasil.</h2>
               <p style={{ fontSize: '1.05rem', marginBottom: '1rem' }}>
                 A terapia online oferece praticidade, conforto e segurança, permitindo que você realize suas sessões em um ambiente familiar, sem abrir mão da qualidade do acompanhamento psicológico.
