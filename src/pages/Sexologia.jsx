@@ -225,6 +225,31 @@ const Sexologia = () => {
         </div>
       </section>
 
+      {/* ATENDIMENTO ONLINE */}
+      <section className="section">
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div>
+            <FadeUp>
+              <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--color-brown-deep)' }}>
+                Atendimento online para todo o Brasil e brasileiros que vivem no exterior.
+              </h2>
+              <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--color-text)' }}>
+                As consultas são realizadas em ambiente seguro, reservado e sigiloso, oferecendo conforto e praticidade, sem abrir mão da qualidade do acompanhamento psicológico.
+              </p>
+              <p style={{ fontSize: '1.1rem', margin: 0, color: 'var(--color-text)' }}>
+                Todo o processo ocorre com ética, acolhimento e respeito à individualidade de cada paciente.
+              </p>
+            </FadeUp>
+          </div>
+          <div>
+            <FadeUp delay={0.2}>
+              <div style={{ height: '400px', borderRadius: '16px', backgroundColor: 'var(--color-secondary)', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }}>
+                <img src="/foto-2.jpg" alt="Atendimento Online" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="section section-bg-white">
