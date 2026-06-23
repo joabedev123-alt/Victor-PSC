@@ -56,7 +56,7 @@ h1.uppercase, h2.uppercase, h3.uppercase {
 }
 
 p {
-  text-align: justify;
+  text-align: left;
   margin-bottom: 1.5em;
 }
 
@@ -282,5 +282,10 @@ img {
   [style*="height: 550px"], [style*="height: 500px"], [style*="height: 650px"], [style*="height: 400px"],
   [style*="height:550px"], [style*="height:500px"], [style*="height:650px"], [style*="height:400px"] {
     height: 350px !important;
+  }
+
+  /* Reduce large paddings for mobile screens */
+  [style*="padding: 4rem 3rem"], [style*="padding:4rem 3rem"] {
+    padding: 2.5rem 1.5rem !important;
   }
 }

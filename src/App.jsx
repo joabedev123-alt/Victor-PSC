@@ -37,9 +37,9 @@ const Header = () => {
         
         <nav className="nav-links">
           <Link to="/" className="nav-link">Home</Link>
-          <Link to="/sobre" className="nav-link">Sobre</Link>
-          <Link to="/psicoterapia" className="nav-link">Psicoterapia</Link>
-          <Link to="/sexologia" className="nav-link">Sexologia Clínica</Link>
+          <Link to="/sobre" className="nav-link">Sobre Mim</Link>
+          <Link to="/psicoterapia" className="nav-link">Atendimento Online</Link>
+          <Link to="/sexologia" className="nav-link">Formação</Link>
           <Link to="/contato" className="nav-link">Contato</Link>
         </nav>
 
@@ -61,9 +61,9 @@ const Header = () => {
             }}
           >
             <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <Link to="/sobre" onClick={() => setMobileMenuOpen(false)}>Sobre</Link>
-            <Link to="/psicoterapia" onClick={() => setMobileMenuOpen(false)}>Psicoterapia</Link>
-            <Link to="/sexologia" onClick={() => setMobileMenuOpen(false)}>Sexologia Clínica</Link>
+            <Link to="/sobre" onClick={() => setMobileMenuOpen(false)}>Sobre Mim</Link>
+            <Link to="/psicoterapia" onClick={() => setMobileMenuOpen(false)}>Atendimento Online</Link>
+            <Link to="/sexologia" onClick={() => setMobileMenuOpen(false)}>Formação</Link>
             <Link to="/contato" onClick={() => setMobileMenuOpen(false)}>Contato</Link>
           </motion.div>
         )}
@@ -77,14 +77,13 @@ const Footer = () => (
     <div className="container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
       
       {/* Logo */}
-      <div style={{ flex: '1 1 250px', display: 'flex', justifyContent: 'center' }}>
-        <img src="/logo 02.png" alt="Dr. Victor Morais Logo" style={{ height: '220px', width: 'auto', objectFit: 'contain' }} />
+      <div style={{ flex: '1 1 250px', display: 'flex', justifyContent: 'flex-start' }}>
+        <img src="/logo 02.png" alt="Dr. Victor Morais Logo" style={{ height: '300px', width: 'auto', objectFit: 'contain' }} />
       </div>
       
       {/* Informações */}
       <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)' }}>
-        <p style={{ margin: 0, fontWeight: 600, color: '#CFAF8B', fontSize: '1.1rem' }}>CRP 04/80003</p>
-        <p style={{ margin: 0 }}>Psicoterapia Psicanalítica e Sexologia Clínica.</p>
+        <p style={{ margin: 0, fontWeight: 600, color: '#CFAF8B', fontSize: '1.1rem' }}>Psicólogo Clínico • CRP 04/80003</p>
         <p style={{ margin: 0 }}>Belo Horizonte • MG</p>
         <p style={{ margin: 0 }}>Atendimento Online para todo Brasil e brasileiros no exterior.</p>
       </div>

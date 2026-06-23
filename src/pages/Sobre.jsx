@@ -162,12 +162,13 @@ const Sobre = () => {
           </FadeUp>
           <div style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '2px solid var(--color-secondary)' }}>
             {[
-              'Psicologia Clínica',
-              'CRP 04/80003',
-              'Formação em Psicanálise',
-              'Formação em Sexologia Clínica',
-              'Aperfeiçoamentos e cursos complementares',
-              'Atendimento Online para todo Brasil e brasileiros no exterior'
+              'Graduado em Psicologia. Pontifícia Universidade Católica de Minas Gerais.',
+              'Pós-graduado em Sexologia Clínica. Faculdade Metropolitana de Franca, FAMEF, Brasil.',
+              'Aperfeiçoamento em Terapia Psicanalítica, Teoria e Técnicas de Intervenção. Faculdade Metropolitana de Franca, FAMEF, Brasil.',
+              'Extensão em Saúde e Inclusão. Faculdade Metropolitana de Franca, FAMEF, Brasil.',
+              'Aperfeiçoamento em Psicologia Social. Faculdade Metropolitana de Franca, FAMEF, Brasil.',
+              'Extensão em Psicologia e Saúde Coletiva. Faculdade Metropolitana de Franca, FAMEF, Brasil.',
+              'Aperfeiçoamento em Psicologia Clínica. Faculdade Metropolitana de Franca, FAMEF, Brasil.'
             ].map((item, idx) => (
               <FadeUp delay={idx * 0.1} key={idx}>
                 <div style={{ position: 'relative', marginBottom: '2.5rem' }}>

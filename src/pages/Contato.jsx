@@ -80,7 +80,7 @@ const Contato = () => {
                 <InstagramLogo size={48} color="var(--color-brown-main)" weight="thin" style={{ marginBottom: '1rem' }} />
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--color-brown-deep)' }}>Instagram</h3>
                 <p style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '1rem' }}>@psi.victormorais</p>
-                <p style={{ fontSize: '0.95rem', marginBottom: '2rem', flex: 1 }}>Conteúdos sobre saúde emocional, relacionamentos, sexualidade e psicoterapia.</p>
+                <p style={{ fontSize: '0.95rem', marginBottom: '2rem', flex: 1 }}>Reflexões sobre saúde mental e Psicanálise, com uma linguagem acessível e baseada na prática clínica.</p>
                 <a href="https://www.instagram.com/psi.victormorais?igsh=MTJlenk2enE0MTNvYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.8rem', width: '100%' }}>
                   Acompanhar no Instagram
                 </a>
@@ -102,8 +102,8 @@ const Contato = () => {
                     <Clock size={28} color="var(--color-brown-deep)" weight="fill" />
                     <h3 style={{ fontSize: '1.3rem', margin: 0, color: 'var(--color-brown-deep)' }}>Horários</h3>
                   </div>
-                  <p style={{ margin: 0, fontSize: '0.95rem', paddingLeft: '2.3rem', fontWeight: 600 }}>Segunda a Sexta</p>
-                  <p style={{ margin: 0, fontSize: '0.95rem', paddingLeft: '2.3rem' }}>08h às 20h</p>
+                  <p style={{ margin: 0, fontSize: '0.95rem', paddingLeft: '2.3rem', fontWeight: 600 }}>Segunda a sexta-feira</p>
+                  <p style={{ margin: 0, fontSize: '0.95rem', paddingLeft: '2.3rem' }}>09h às 19h</p>
                   <p style={{ margin: 0, fontSize: '0.85rem', paddingLeft: '2.3rem', fontStyle: 'italic', opacity: 0.8 }}>(Sob agendamento)</p>
                 </div>
               </div>
@@ -121,10 +121,10 @@ const Contato = () => {
           </FadeUp>
           <div style={{ position: 'relative', paddingLeft: '2.5rem', borderLeft: '2px solid var(--color-secondary)' }}>
             {[
-              { step: '1. Envie uma mensagem', desc: 'Entre em contato pelo WhatsApp para esclarecer dúvidas e obter informações sobre o atendimento.' },
-              { step: '2. Agendamento', desc: 'Definimos o melhor horário de acordo com sua disponibilidade.' },
-              { step: '3. Primeira Sessão', desc: 'Um espaço de acolhimento, escuta e compreensão da sua história.' },
-              { step: '4. Início do Processo Terapêutico', desc: 'Cada processo é construído de forma individualizada, respeitando seu tempo e suas necessidades.' }
+              { step: 'Primeiro contato', desc: 'Envie uma mensagem via WhatsApp.' },
+              { step: 'Agendamento', desc: 'Definimos juntos o melhor horário para os encontros.' },
+              { step: 'Primeira sessão', desc: 'Um momento para compreender sua demanda, sua história e aquilo que o levou a buscar ajuda.' },
+              { step: 'Acompanhamento', desc: 'O trabalho acontece no seu tempo, respeitando seu percurso e suas necessidades.' }
             ].map((item, idx) => (
               <FadeUp delay={idx * 0.1} key={idx}>
                 <div style={{ position: 'relative', marginBottom: '3rem' }}>
@@ -147,7 +147,7 @@ const Contato = () => {
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <FadeUp>
             <Globe size={60} color="var(--color-brown-main)" weight="thin" style={{ marginBottom: '1.5rem' }} />
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--color-brown-deep)' }}>Psicoterapia e Sexologia Clínica onde você estiver.</h2>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--color-brown-deep)' }}>Psicoterapia onde você estiver.</h2>
             <p style={{ fontSize: '1.15rem', marginBottom: '1.5rem' }}>
               As consultas são realizadas de forma online, em ambiente seguro e reservado, permitindo que você seja atendido com conforto, praticidade e sigilo.
             </p>
@@ -208,7 +208,7 @@ const Contato = () => {
         <div className="container" style={{ maxWidth: '700px' }}>
           <FadeUp>
             <div style={{ backgroundColor: '#fff', borderRadius: '24px', padding: '4rem 3rem', boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }}>
-              <h2 className="text-center" style={{ fontSize: '2.5rem', marginBottom: '2.5rem', color: 'var(--color-brown-deep)' }}>Vamos iniciar essa conversa?</h2>
+              <h2 className="text-center" style={{ fontSize: '2.5rem', marginBottom: '2.5rem', color: 'var(--color-brown-deep)' }}>Vamos iniciar o seu processo terapêutico?</h2>
               
               <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }} onSubmit={(e) => e.preventDefault()}>
                 <div>
@@ -258,7 +258,7 @@ const Contato = () => {
         <div className="container" style={{ maxWidth: '800px' }}>
           <FadeUp>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--color-secondary)' }}>
-              Cuidar da saúde emocional é um gesto de coragem e acolhimento consigo mesmo.
+              Cuidar da saúde mental é o primeiro passo para uma vida com mais sentido.
             </h2>
             <p style={{ fontSize: '1.15rem', marginBottom: '3rem', color: 'rgba(255,255,255,0.8)' }}>
               Se você sente que chegou o momento de olhar para sua história com mais profundidade, estou à disposição para acompanhá-lo nesse processo.
