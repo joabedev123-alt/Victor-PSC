@@ -1,0 +1,236 @@
+:root {
+  --color-bg-main: #F1E7D5;
+  --color-bg-alt: #FFFFFF;
+  --color-secondary: #CFAF8B;
+  --color-brown-main: #A2734A;
+  --color-brown-deep: #6D482B;
+  --color-text: #2B2B2B;
+  --color-white: #FFFFFF;
+
+  --font-title: 'Bodoni Moda', serif;
+  --font-text: 'Plus Jakarta Sans', sans-serif;
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--color-bg-main);
+  color: var(--color-text);
+  line-height: 1.9;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  body { font-size: 17px; }
+}
+
+@media (min-width: 1024px) {
+  body { font-size: 18px; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+h1.uppercase, h2.uppercase, h3.uppercase {
+  text-transform: uppercase;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 1.5em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-bg-white {
+  background-color: var(--color-bg-alt);
+}
+
+.text-center { text-align: center; }
+.text-justify { text-align: justify; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-brown-deep);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brown-main);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(109, 72, 43, 0.15);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-brown-deep);
+  border: 1px solid var(--color-brown-deep);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-brown-deep);
+  color: var(--color-white);
+}
+
+/* Header */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  padding: 1.5rem 0;
+  transition: padding 0.3s ease;
+  border-bottom: 1px solid rgba(207, 175, 139, 0.2);
+}
+
+.header.scrolled {
+  padding: 1rem 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-brown-deep);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-brown-main);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-brown-deep);
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+/* Floating WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+}
