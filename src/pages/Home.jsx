@@ -38,7 +38,7 @@ const Home = () => {
               Psicoterapia com acolhimento, profundidade e escuta especializada.
             </h1>
             <p style={{ fontSize: '1.2rem', marginBottom: '2.5rem', color: 'var(--color-text)' }}>
-              Ofereço um espaço de escuta ética, acolhedora e livre de julgamentos, comprometido com o cuidado à saúde mental. Atuo a partir da Psicanálise e sou pós-graduado em Sexologia Clínica pela Faculdade Metropolitana.
+              Ofereço um espaço de escuta ética, acolhedora e livre de julgamentos, comprometido com o cuidado à saúde mental.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <Link to="/contato" className="btn btn-primary">Agendar uma sessão</Link>
@@ -54,7 +54,7 @@ const Home = () => {
               overflow: 'hidden',
               boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
             }}>
-              <img src="/foto-1402.jpg" alt="Dr. Victor Morais" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/Profissionais/Fotos pessoais/0F583A34-56E5-41A6-892F-DA79F98BCF63.JPG" alt="Dr. Victor Morais" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </FadeUp>
         </div>
@@ -157,7 +157,9 @@ const Home = () => {
       <section className="section section-bg-white">
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
           <FadeUp>
-            <div style={{ height: '600px', borderRadius: '12px', background: 'var(--color-secondary)' }}></div>
+            <div style={{ height: '600px', borderRadius: '12px', background: 'var(--color-secondary)', overflow: 'hidden' }}>
+              <img src="/Profissionais/Fotos pessoais/BC7E9C1C-3F71-494A-BF65-1FBD59B5FA64.JPG" alt="Dr. Victor Morais" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--color-brown-deep)', textTransform: 'uppercase' }}>Sua história merece ser ouvida.</h2>

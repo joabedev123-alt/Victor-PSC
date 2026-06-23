@@ -249,24 +249,31 @@ img {
     gap: 3rem;
   }
   
-  .hero-section {
+  .hero-section,
+  section[style*="min-height: 80vh"],
+  section[style*="min-height: 60vh"] {
     min-height: auto !important;
-    padding-top: 8rem !important;
-    padding-bottom: 4rem !important;
+    padding-top: 7rem !important;
+    padding-bottom: 3rem !important;
     text-align: center;
   }
 
   h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
   }
 
   h2 {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 
   .btn {
     width: 100%;
     margin-bottom: 1rem;
+  }
+
+  .section {
+    padding: 3rem 0;
   }
 
   /* Universal override for inline 2-column grids */
@@ -275,17 +282,26 @@ img {
   [style*="grid-template-columns:1fr 1fr"],
   [style*="grid-template-columns:1fr 1.2fr"] {
     grid-template-columns: 1fr !important;
-    gap: 2.5rem !important;
+    gap: 2rem !important;
+    text-align: center;
   }
 
+  /* Specific overrides to avoid centering lists or specific texts if needed, 
+     but generally text-center on mobile looks good for a grid-collapsed layout. */
+
   /* Reduce image container heights on mobile */
-  [style*="height: 550px"], [style*="height: 500px"], [style*="height: 650px"], [style*="height: 400px"],
-  [style*="height:550px"], [style*="height:500px"], [style*="height:650px"], [style*="height:400px"] {
-    height: 350px !important;
+  [style*="height: 600px"], [style*="height: 550px"], [style*="height: 500px"], [style*="height: 650px"], [style*="height: 400px"], [style*="height: 300px"],
+  [style*="height:600px"], [style*="height:550px"], [style*="height:500px"], [style*="height:650px"], [style*="height:400px"], [style*="height:300px"] {
+    height: 300px !important;
   }
 
   /* Reduce large paddings for mobile screens */
-  [style*="padding: 4rem 3rem"], [style*="padding:4rem 3rem"] {
-    padding: 2.5rem 1.5rem !important;
+  [style*="padding: 4rem 3rem"], [style*="padding:4rem 3rem"],
+  [style*="padding: 6rem 2rem"], [style*="padding:6rem 2rem"] {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .container {
+    padding: 0 1.2rem;
   }
 }

@@ -70,7 +70,7 @@ const Sobre = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--color-text)', fontSize: '1.05rem' }}>
               <p>Meu nome é Victor Morais, sou Psicólogo Clínico (CRP 04/80003), com atuação fundamentada na Psicanálise e formação em Sexologia Clínica.</p>
               <p>Ao longo da minha trajetória, desenvolvi uma prática voltada para a escuta singular de cada paciente, respeitando sua história, seus conflitos e a forma única como cada indivíduo experimenta a vida.</p>
-              <p>Atuo principalmente com psicoterapia individual, auxiliando pessoas que enfrentam ansiedade, depressão, dificuldades nos relacionamentos, sofrimento emocional, questões relacionadas à sexualidade e crises existenciais.</p>
+              <p>Atuo principalmente com psicoterapia individual, auxiliando pessoas que enfrentam ansiedade, depressão, dificuldades nos relacionamentos, sofrimento emocional, questões relacionadas à sexualidade e conflitos existenciais.</p>
               <p>Realizo atendimentos online para todo o Brasil e também para brasileiros que vivem no exterior, proporcionando um espaço de acolhimento, reflexão e transformação.</p>
             </div>
           </FadeUp>
@@ -205,36 +205,6 @@ const Sobre = () => {
                   <div style={{ color: 'var(--color-brown-main)', fontSize: '2rem', marginBottom: '1rem' }}>{valor.icon}</div>
                   <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--color-brown-deep)' }}>{valor.title}</h3>
                   <p style={{ margin: 0, fontSize: '0.95rem' }}>{valor.desc}</p>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PARA QUEM É A TERAPIA */}
-      <section className="section section-bg-white">
-        <div className="container">
-          <FadeUp>
-            <h2 className="text-center" style={{ fontSize: '2.5rem', marginBottom: '4rem', color: 'var(--color-brown-deep)' }}>Para quem é a terapia?</h2>
-          </FadeUp>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-            {[
-              'Pessoas que convivem com ansiedade.',
-              'Sintomas depressivos.',
-              'Burnout e estresse.',
-              'Questões relacionadas à autoestima.',
-              'Relacionamentos e conflitos afetivos.',
-              'Sexualidade e intimidade.',
-              'Luto e crises existenciais.',
-              'Brasileiros que vivem no exterior.'
-            ].map((item, idx) => (
-              <FadeUp delay={idx * 0.1} key={idx}>
-                <div style={{ 
-                  padding: '2rem', backgroundColor: 'var(--color-bg-main)', borderRadius: '12px', height: '100%',
-                  display: 'flex', alignItems: 'center', gap: '1rem', borderLeft: '4px solid var(--color-brown-main)'
-                }}>
-                  <p style={{ margin: 0, fontWeight: 500, color: 'var(--color-brown-deep)' }}>{item}</p>
                 </div>
               </FadeUp>
             ))}

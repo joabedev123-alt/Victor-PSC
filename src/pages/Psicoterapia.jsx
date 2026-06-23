@@ -64,7 +64,7 @@ const Psicoterapia = () => {
               boxShadow: '0 20px 40px rgba(0,0,0,0.05)'
             }}>
               {/* Imagem Humanizada */}
-              <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, var(--color-bg-main), var(--color-secondary))', opacity: 0.7 }}></div>
+              <img src="/Profissionais/Fotos pessoais/IMG_2557.jpeg" alt="Psicoterapia" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </FadeUp>
         </div>
@@ -101,7 +101,7 @@ const Psicoterapia = () => {
               { title: 'Burnout e Estresse', desc: 'Encontrar equilíbrio diante das exigências do trabalho e da rotina.' },
               { title: 'Autoestima', desc: 'Desenvolver uma relação mais saudável consigo mesmo.' },
               { title: 'Relacionamentos', desc: 'Compreender padrões afetivos e melhorar vínculos pessoais e amorosos.' },
-              { title: 'Crises Existenciais', desc: 'Refletir sobre propósito, mudanças e momentos de transição da vida.' }
+              { title: 'Conflitos Existenciais', desc: 'Refletir sobre propósito, mudanças e momentos de transição da vida.' }
             ].map((item, idx) => (
               <FadeUp delay={idx * 0.1} key={idx}>
                 <div style={{
@@ -156,7 +156,8 @@ const Psicoterapia = () => {
               'Quando existe sofrimento emocional constante.',
               'Em situações de estresse ou esgotamento.',
               'Quando há dificuldade em lidar com emoções.',
-              'Quando surge o desejo de se conhecer melhor.'
+              'Quando surge o desejo de se conhecer melhor.',
+              'Passa por mudanças importantes ou momentos de transição.'
             ].map((item, idx) => (
               <FadeUp delay={idx * 0.05} key={idx}>
                 <div style={{
@@ -184,7 +185,7 @@ const Psicoterapia = () => {
               { step: '2. Agendamento', desc: 'Definimos o melhor horário para os atendimentos.' },
               { step: '3. Sessões Online', desc: 'Encontros em ambiente seguro, reservado e sigiloso.' },
               { step: '4. Processo Terapêutico', desc: 'Cada pessoa possui seu próprio tempo e necessidades.' },
-              { step: '5. Desenvolvimento', desc: 'O objetivo é promover autoconhecimento e qualidade de vida.' }
+              { step: '5. Desenvolvimento', desc: 'A psicoterapia é construída a partir da escuta das demandas únicas de cada paciente, respeitando sua história e suas necessidades específicas.' }
             ].map((item, idx) => (
               <FadeUp delay={idx * 0.1} key={idx}>
                 <div style={{ position: 'relative', marginBottom: '3rem' }}>
@@ -214,8 +215,8 @@ const Psicoterapia = () => {
               {[
                 'Ansiedade', 'Depressão', 'Burnout', 'Baixa autoestima',
                 'Problemas nos relacionamentos', 'Inseguranças', 'Luto',
-                'Estresse', 'Crises existenciais', 'Questões com sexualidade',
-                'Sofrimento emocional', 'Conflitos familiares', 'Brasileiros no exterior'
+                'Estresse', 'conflitos existenciais', 'Saúde sexual e sexualidade',
+                'Sofrimento emocional', 'Conflitos familiares'
               ].map((item, idx) => (
                 <FadeUp delay={idx * 0.05} key={idx}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -230,7 +231,7 @@ const Psicoterapia = () => {
           <div>
             <FadeUp>
               <div style={{ height: '300px', borderRadius: '16px', backgroundColor: 'var(--color-secondary)', opacity: 0.3, marginBottom: '2rem' }}></div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--color-brown-deep)' }}>Psicoterapia online para todo o Brasil e exterior.</h2>
+              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--color-brown-deep)' }}>Psicoterapia online para todo o Brasil.</h2>
               <p style={{ fontSize: '1.05rem', marginBottom: '1rem' }}>
                 A terapia online oferece praticidade, conforto e segurança, permitindo que você realize suas sessões em um ambiente familiar, sem abrir mão da qualidade do acompanhamento psicológico.
               </p>
@@ -243,29 +244,35 @@ const Psicoterapia = () => {
       </section>
 
       {/* FAQ */}
-      <section className="section">
+      <section className="section section-bg-white">
         <div className="container" style={{ maxWidth: '800px' }}>
           <FadeUp>
-            <h2 className="text-center" style={{ fontSize: '2.5rem', marginBottom: '4rem', color: 'var(--color-brown-deep)' }}>Perguntas Frequentes</h2>
+            <h2 className="text-center" style={{ fontSize: '2.5rem', marginBottom: '4rem', color: 'var(--color-brown-deep)' }}>Dúvidas Frequentes</h2>
           </FadeUp>
+          
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: 'Quanto dura uma sessão?', a: 'Em média, 50 minutos.' },
-              { q: 'Qual a frequência dos encontros?', a: 'Geralmente semanal, podendo variar conforme cada caso.' },
-              { q: 'A terapia online é eficaz?', a: 'Sim. Diversos estudos demonstram sua eficácia e ela segue as normas do Conselho Federal de Psicologia.' },
-              { q: 'Quanto tempo dura o tratamento?', a: 'Cada processo é único. O tempo varia de acordo com as necessidades e objetivos de cada pessoa.' }
+              { q: 'Como funciona a terapia online?', a: 'As sessões acontecem por videochamada, em uma plataforma segura, permitindo que você seja atendido de onde estiver.' },
+              { q: 'Como faço para agendar uma sessão?', a: 'Basta entrar em contato pelo WhatsApp para esclarecer dúvidas e verificar a disponibilidade de horários.' },
+              { q: 'Qual a duração das sessões?', a: 'As sessões têm duração aproximada de 50 minutos.' },
+              { q: 'Com que frequência acontecem as sessões?', a: 'A frequência dos encontros é definida em conjunto entre psicólogo e paciente, considerando as necessidades, objetivos e particularidades de cada caso. Em muitos casos, as sessões ocorrem semanalmente, mas essa decisão faz parte da construção do processo terapêutico.' },
+              { q: 'Como saber se a terapia pode me ajudar?', a: 'A decisão de iniciar um processo terapêutico é pessoal. As primeiras sessões permitem compreender melhor suas demandas e avaliar como o trabalho pode contribuir para você.' },
+              { q: 'Os atendimentos são sigilosos?', a: 'Sim. O sigilo profissional é um princípio ético fundamental.' },
+              { q: 'Como obter informações sobre os valores?', a: 'As informações sobre valores e formas de pagamento são fornecidas diretamente no primeiro contato.' },
+              { q: 'Atende brasileiros no exterior?', a: 'Sim. Realizo atendimentos online para brasileiros que vivem em diferentes países.' },
+              { q: 'Nunca fiz terapia. Como funciona a primeira sessão?', a: 'A primeira sessão é um momento de acolhimento e escuta, em que você poderá falar sobre suas questões, expectativas e dúvidas em relação ao processo terapêutico.' },
+              { q: 'Quanto tempo dura um processo terapêutico?', a: 'Não existe uma duração pré-definida. Cada processo é único e acontece de acordo com as necessidades, objetivos e particularidades de cada pessoa.' }
             ].map((faq, idx) => (
               <FadeUp delay={idx * 0.1} key={idx}>
                 <div 
                   onClick={() => toggleFaq(idx)}
                   style={{
-                    padding: '1.5rem 2rem', backgroundColor: '#fff', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.3s',
-                    boxShadow: '0 5px 15px rgba(0,0,0,0.03)'
+                    padding: '1.5rem 2rem', backgroundColor: 'var(--color-bg-main)', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.3s'
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <h3 style={{ fontSize: '1.1rem', margin: 0, fontWeight: 500, color: 'var(--color-brown-deep)' }}>{faq.q}</h3>
-                    {openFaq === idx ? <Minus size={20} color="var(--color-brown-main)" /> : <Plus size={20} color="var(--color-brown-main)" />}
+                    <h3 style={{ fontSize: '1.1rem', margin: 0, fontWeight: 500 }}>{faq.q}</h3>
+                    {openFaq === idx ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                   <AnimatePresence>
                     {openFaq === idx && (
@@ -275,7 +282,7 @@ const Psicoterapia = () => {
                         exit={{ height: 0, opacity: 0 }}
                         style={{ overflow: 'hidden' }}
                       >
-                        <p style={{ marginTop: '1rem', marginBottom: 0, fontSize: '1rem', color: 'var(--color-text)' }}>{faq.a}</p>
+                        <p style={{ marginTop: '1rem', marginBottom: 0, fontSize: '0.95rem' }}>{faq.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>

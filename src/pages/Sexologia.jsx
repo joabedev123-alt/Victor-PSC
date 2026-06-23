@@ -251,14 +251,21 @@ const Sexologia = () => {
       <section className="section section-bg-white">
         <div className="container" style={{ maxWidth: '800px' }}>
           <FadeUp>
-            <h2 className="text-center" style={{ fontSize: '2.5rem', marginBottom: '4rem', color: 'var(--color-brown-deep)' }}>Perguntas Frequentes</h2>
+            <h2 className="text-center" style={{ fontSize: '2.5rem', marginBottom: '4rem', color: 'var(--color-brown-deep)' }}>Dúvidas Frequentes</h2>
           </FadeUp>
+          
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: 'O atendimento é sigiloso?', a: 'Sim. Todo acompanhamento psicológico segue rigorosamente os princípios éticos da profissão e o sigilo profissional.' },
-              { q: 'É necessário estar em um relacionamento para procurar a Sexologia Clínica?', a: 'Não. O acompanhamento pode beneficiar qualquer pessoa que deseje compreender melhor sua sexualidade, autoestima ou relacionamentos.' },
-              { q: 'O atendimento é apenas para problemas sexuais?', a: 'Não. A Sexologia Clínica aborda também questões relacionadas à intimidade, vínculos afetivos, autoestima e bem-estar emocional.' },
-              { q: 'O atendimento é realizado online?', a: 'Sim. Atendo pacientes de todo o Brasil e brasileiros que vivem no exterior.' }
+              { q: 'Como funciona a terapia online?', a: 'As sessões acontecem por videochamada, em uma plataforma segura, permitindo que você seja atendido de onde estiver.' },
+              { q: 'Como faço para agendar uma sessão?', a: 'Basta entrar em contato pelo WhatsApp para esclarecer dúvidas e verificar a disponibilidade de horários.' },
+              { q: 'Qual a duração das sessões?', a: 'As sessões têm duração aproximada de 50 minutos.' },
+              { q: 'Com que frequência acontecem as sessões?', a: 'A frequência dos encontros é definida em conjunto entre psicólogo e paciente, considerando as necessidades, objetivos e particularidades de cada caso. Em muitos casos, as sessões ocorrem semanalmente, mas essa decisão faz parte da construção do processo terapêutico.' },
+              { q: 'Como saber se a terapia pode me ajudar?', a: 'A decisão de iniciar um processo terapêutico é pessoal. As primeiras sessões permitem compreender melhor suas demandas e avaliar como o trabalho pode contribuir para você.' },
+              { q: 'Os atendimentos são sigilosos?', a: 'Sim. O sigilo profissional é um princípio ético fundamental.' },
+              { q: 'Como obter informações sobre os valores?', a: 'As informações sobre valores e formas de pagamento são fornecidas diretamente no primeiro contato.' },
+              { q: 'Atende brasileiros no exterior?', a: 'Sim. Realizo atendimentos online para brasileiros que vivem em diferentes países.' },
+              { q: 'Nunca fiz terapia. Como funciona a primeira sessão?', a: 'A primeira sessão é um momento de acolhimento e escuta, em que você poderá falar sobre suas questões, expectativas e dúvidas em relação ao processo terapêutico.' },
+              { q: 'Quanto tempo dura um processo terapêutico?', a: 'Não existe uma duração pré-definida. Cada processo é único e acontece de acordo com as necessidades, objetivos e particularidades de cada pessoa.' }
             ].map((faq, idx) => (
               <FadeUp delay={idx * 0.1} key={idx}>
                 <div 
@@ -268,8 +275,8 @@ const Sexologia = () => {
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <h3 style={{ fontSize: '1.1rem', margin: 0, fontWeight: 500, color: 'var(--color-brown-deep)' }}>{faq.q}</h3>
-                    {openFaq === idx ? <Minus size={20} color="var(--color-brown-main)" /> : <Plus size={20} color="var(--color-brown-main)" />}
+                    <h3 style={{ fontSize: '1.1rem', margin: 0, fontWeight: 500 }}>{faq.q}</h3>
+                    {openFaq === idx ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                   <AnimatePresence>
                     {openFaq === idx && (
@@ -279,7 +286,7 @@ const Sexologia = () => {
                         exit={{ height: 0, opacity: 0 }}
                         style={{ overflow: 'hidden' }}
                       >
-                        <p style={{ marginTop: '1rem', marginBottom: 0, fontSize: '1rem', color: 'var(--color-text)' }}>{faq.a}</p>
+                        <p style={{ marginTop: '1rem', marginBottom: 0, fontSize: '0.95rem' }}>{faq.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
