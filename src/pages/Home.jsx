@@ -211,7 +211,7 @@ const Home = () => {
               overflow: 'hidden',
               boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
             }}>
-              <img src="/Profissionais 2/Profissionais 2/48DFD5F2-6ECF-4DE5-A3C4-CB46289A56EF.JPG" alt="Atendimento" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/foto-1402.jpg" alt="Atendimento" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </FadeUp>
         </div>
