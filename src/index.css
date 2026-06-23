@@ -234,3 +234,53 @@ img {
   transform: scale(1.1);
   box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
 }
+
+/* Responsive Utilities */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hero-section {
+    min-height: auto !important;
+    padding-top: 8rem !important;
+    padding-bottom: 4rem !important;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Universal override for inline 2-column grids */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.2fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns:1fr 1.2fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  /* Reduce image container heights on mobile */
+  [style*="height: 550px"], [style*="height: 500px"], [style*="height: 650px"], [style*="height: 400px"],
+  [style*="height:550px"], [style*="height:500px"], [style*="height:650px"], [style*="height:400px"] {
+    height: 350px !important;
+  }
+}
