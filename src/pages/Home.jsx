@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CaretDown, CheckCircle, Plus, Minus, InstagramLogo } from 'phosphor-react';
+import { CaretDown, CaretLeft, CaretRight, CheckCircle, Plus, Minus, InstagramLogo } from 'phosphor-react';
 import { Link } from 'react-router-dom';
 
 const FadeUp = ({ children, delay = 0 }) => (
@@ -21,6 +21,73 @@ const Home = () => {
     if (openFaq === index) setOpenFaq(null);
     else setOpenFaq(index);
   };
+
+  // ============================================================
+  // POSTS DO INSTAGRAM @psi.victormorais — feed automático via Behold
+  // Os posts são puxados em tempo real do feed e já vêm ordenados
+  // por data de publicação (mais recente primeiro). Atualiza sozinho
+  // sempre que o Victor publicar um post novo no Instagram.
+  // Feed ID: lygXu3P2DuOcJ3sUc3RP
+  // ============================================================
+  const BEHOLD_FEED_ID = 'lygXu3P2DuOcJ3sUc3RP';
+  const [instagramPosts, setInstagramPosts] = React.useState([]);
+  const [igLoading, setIgLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const formatarData = (timestamp) => {
+      try {
+        return new Date(timestamp)
+          .toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' })
+          .replace('.', '')
+          .replace(' de ', '/');
+      } catch {
+        return '';
+      }
+    };
+
+    fetch(`https://feeds.behold.so/${BEHOLD_FEED_ID}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const posts = (data.posts || []).map((p) => {
+          const legenda = (p.prunedCaption || p.caption || '').trim();
+          return {
+            img: p.sizes?.medium?.mediaUrl || p.sizes?.large?.mediaUrl || p.mediaUrl,
+            link: p.permalink || 'https://www.instagram.com/psi.victormorais',
+            legenda: legenda.length > 120 ? legenda.slice(0, 117) + '...' : legenda,
+            data: formatarData(p.timestamp),
+          };
+        });
+        setInstagramPosts(posts);
+      })
+      .catch(() => setInstagramPosts([]))
+      .finally(() => setIgLoading(false));
+  }, []);
+
+  const [igIndex, setIgIndex] = React.useState(0);
+  const [igPerView, setIgPerView] = React.useState(
+    typeof window !== 'undefined' && window.innerWidth <= 768 ? 1 : 3
+  );
+
+  React.useEffect(() => {
+    const handleResize = () => setIgPerView(window.innerWidth <= 768 ? 1 : 3);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const igMaxIndex = Math.max(0, instagramPosts.length - igPerView);
+
+  React.useEffect(() => {
+    setIgIndex((prev) => Math.min(prev, igMaxIndex));
+  }, [igMaxIndex]);
+
+  const igPrev = () => setIgIndex((prev) => (prev <= 0 ? igMaxIndex : prev - 1));
+  const igNext = () => setIgIndex((prev) => (prev >= igMaxIndex ? 0 : prev + 1));
+
+  // Auto-play: avança a cada 5s
+  React.useEffect(() => {
+    const timer = setInterval(igNext, 5000);
+    return () => clearInterval(timer);
+  }, [igMaxIndex]);
 
   return (
     <>
@@ -302,46 +369,168 @@ const Home = () => {
             <p style={{ maxWidth: '600px', margin: '0 auto 3rem auto', color: 'var(--color-text)' }}>
               Compartilho reflexões diárias sobre saúde mental, psicanálise e bem-estar emocional.
             </p>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '1.5rem',
-              maxWidth: '900px',
-              margin: '0 auto',
-              width: '100%'
-            }}>
-              {[
-                '/Profissionais/Fotos pessoais/IMG_2557.jpeg',
-                '/Profissionais/Fotos pessoais/26B97E0E-2366-4892-9340-23C86E2FBB0D.jpeg',
-                '/Profissionais/Fotos pessoais/BC7E9C1C-3F71-494A-BF65-1FBD59B5FA64.JPG'
-              ].map((img, idx) => (
-                <a 
-                  key={idx} 
-                  href="https://www.instagram.com/psi.victormorais" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+            {/* Estado de carregamento do feed */}
+            {igLoading && (
+              <p style={{ color: 'var(--color-text)', opacity: 0.6 }}>Carregando posts do Instagram...</p>
+            )}
+
+            {/* CARROSSEL DE POSTS (feed Behold, ordenado por data de publicação) */}
+            {!igLoading && instagramPosts.length > 0 && (
+            <>
+            <div style={{ position: 'relative', maxWidth: '960px', margin: '0 auto', width: '100%' }}>
+              {/* Trilho com overflow escondido */}
+              <div style={{ overflow: 'hidden', borderRadius: '16px' }}>
+                <div style={{
+                  display: 'flex',
+                  transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transform: `translateX(-${igIndex * (100 / igPerView)}%)`,
+                }}>
+                  {instagramPosts.map((post, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        flex: `0 0 ${100 / igPerView}%`,
+                        maxWidth: `${100 / igPerView}%`,
+                        padding: '0 0.75rem',
+                        boxSizing: 'border-box',
+                      }}
+                    >
+                      <a
+                        href={post.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'block',
+                          position: 'relative',
+                          width: '100%',
+                          aspectRatio: '1/1',
+                          borderRadius: '16px',
+                          overflow: 'hidden',
+                          boxShadow: '0 10px 20px rgba(0,0,0,0.08)',
+                          transition: 'transform 0.3s ease, filter 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'translateY(-5px)';
+                          e.currentTarget.querySelector('.ig-overlay').style.opacity = '1';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'translateY(0)';
+                          e.currentTarget.querySelector('.ig-overlay').style.opacity = '0';
+                        }}
+                      >
+                        <img src={post.img} alt={`Post Instagram ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        {/* Badge de data */}
+                        <span style={{
+                          position: 'absolute',
+                          top: '0.75rem',
+                          right: '0.75rem',
+                          background: 'rgba(0,0,0,0.55)',
+                          color: '#fff',
+                          fontSize: '0.75rem',
+                          padding: '0.25rem 0.6rem',
+                          borderRadius: '999px',
+                          backdropFilter: 'blur(4px)',
+                        }}>{post.data}</span>
+                        {/* Overlay com legenda */}
+                        <div className="ig-overlay" style={{
+                          position: 'absolute',
+                          inset: 0,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'flex-end',
+                          padding: '1.25rem',
+                          background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 55%)',
+                          opacity: 0,
+                          transition: 'opacity 0.3s ease',
+                        }}>
+                          <span style={{ color: '#fff', fontSize: '0.95rem', lineHeight: 1.4, textAlign: 'left' }}>
+                            {post.legenda}
+                          </span>
+                          <span style={{ color: '#fff', fontSize: '0.8rem', marginTop: '0.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                            <InstagramLogo size={16} /> @psi.victormorais
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Seta anterior */}
+              <button
+                onClick={igPrev}
+                aria-label="Post anterior"
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '-0.5rem',
+                  transform: 'translateY(-50%)',
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '50%',
+                  border: 'none',
+                  background: '#fff',
+                  color: 'var(--color-brown-deep)',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 2,
+                }}
+              >
+                <CaretLeft size={22} weight="bold" />
+              </button>
+
+              {/* Seta próxima */}
+              <button
+                onClick={igNext}
+                aria-label="Próximo post"
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  right: '-0.5rem',
+                  transform: 'translateY(-50%)',
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '50%',
+                  border: 'none',
+                  background: '#fff',
+                  color: 'var(--color-brown-deep)',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 2,
+                }}
+              >
+                <CaretRight size={22} weight="bold" />
+              </button>
+            </div>
+
+            {/* Indicadores (bolinhas) */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1.5rem' }}>
+              {Array.from({ length: igMaxIndex + 1 }).map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setIgIndex(idx)}
+                  aria-label={`Ir para slide ${idx + 1}`}
                   style={{
-                    display: 'block',
-                    width: '100%',
-                    aspectRatio: '1/1',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    boxShadow: '0 10px 20px rgba(0,0,0,0.05)',
-                    transition: 'transform 0.3s ease, filter 0.3s ease'
+                    width: igIndex === idx ? '24px' : '8px',
+                    height: '8px',
+                    borderRadius: '999px',
+                    border: 'none',
+                    background: igIndex === idx ? 'var(--color-brown-deep)' : 'rgba(0,0,0,0.2)',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    padding: 0,
                   }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-5px)';
-                    e.currentTarget.style.filter = 'brightness(0.9)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.filter = 'brightness(1)';
-                  }}
-                >
-                  <img src={img} alt={`Post Instagram ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </a>
+                />
               ))}
             </div>
+            </>
+            )}
             <div style={{ marginTop: '3rem' }}>
               <a href="https://www.instagram.com/psi.victormorais" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                 <InstagramLogo size={20} /> Seguir @psi.victormorais
