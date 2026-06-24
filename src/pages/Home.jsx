@@ -50,8 +50,12 @@ const Home = () => {
       .then((data) => {
         const posts = (data.posts || []).map((p) => {
           const legenda = (p.prunedCaption || p.caption || '').trim();
+          // Imagem original do Instagram (sem corte). Caso ela falhe/expire,
+          // cai para a versão quadrada em cache do Behold (sempre disponível).
+          const cropFallback = p.sizes?.large?.mediaUrl || p.sizes?.medium?.mediaUrl || '';
           return {
-            img: p.sizes?.medium?.mediaUrl || p.sizes?.large?.mediaUrl || p.mediaUrl,
+            img: p.mediaUrl || cropFallback,
+            imgFallback: cropFallback,
             link: p.permalink || 'https://www.instagram.com/psi.victormorais',
             legenda: legenda.length > 120 ? legenda.slice(0, 117) + '...' : legenda,
             data: formatarData(p.timestamp),
@@ -403,9 +407,10 @@ const Home = () => {
                           display: 'block',
                           position: 'relative',
                           width: '100%',
-                          aspectRatio: '1/1',
+                          aspectRatio: '4/5',
                           borderRadius: '16px',
                           overflow: 'hidden',
+                          background: 'var(--color-bg-main)',
                           boxShadow: '0 10px 20px rgba(0,0,0,0.08)',
                           transition: 'transform 0.3s ease, filter 0.3s ease',
                         }}
@@ -418,7 +423,17 @@ const Home = () => {
                           e.currentTarget.querySelector('.ig-overlay').style.opacity = '0';
                         }}
                       >
-                        <img src={post.img} alt={`Post Instagram ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img
+                          src={post.img}
+                          alt={`Post Instagram ${idx + 1}`}
+                          loading="lazy"
+                          onError={(e) => {
+                            if (post.imgFallback && e.currentTarget.src !== post.imgFallback) {
+                              e.currentTarget.src = post.imgFallback;
+                            }
+                          }}
+                          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                        />
                         {/* Badge de data */}
                         <span style={{
                           position: 'absolute',
