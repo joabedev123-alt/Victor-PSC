@@ -39,7 +39,7 @@ const Header = () => {
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/sobre" className="nav-link">Sobre Mim</Link>
           <Link to="/psicoterapia" className="nav-link">Psicoterapia</Link>
-          <Link to="/sexologia" className="nav-link">Formação</Link>
+          <Link to="/sexologia" className="nav-link">Formação Complementar</Link>
           <Link to="/contato" className="nav-link">Contato</Link>
         </nav>
 
@@ -63,7 +63,7 @@ const Header = () => {
             <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
             <Link to="/sobre" onClick={() => setMobileMenuOpen(false)}>Sobre Mim</Link>
             <Link to="/psicoterapia" onClick={() => setMobileMenuOpen(false)}>Psicoterapia</Link>
-            <Link to="/sexologia" onClick={() => setMobileMenuOpen(false)}>Formação</Link>
+            <Link to="/sexologia" onClick={() => setMobileMenuOpen(false)}>Formação Complementar</Link>
             <Link to="/contato" onClick={() => setMobileMenuOpen(false)}>Contato</Link>
           </motion.div>
         )}

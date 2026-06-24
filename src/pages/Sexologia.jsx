@@ -306,7 +306,7 @@ const Sexologia = () => {
         <div className="container" style={{ maxWidth: '750px' }}>
           <FadeUp>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--color-secondary)' }}>
-              Cuidar da sexualidade também é cuidar da saúde emocional.
+              Cuidar da saúde sexual também é cuidar da saúde emocional.
             </h2>
             <p style={{ fontSize: '1.2rem', marginBottom: '3rem', color: 'rgba(255,255,255,0.8)' }}>
               Através de uma escuta acolhedora, ética e especializada, é possível compreender conflitos, fortalecer relacionamentos e construir uma relação mais saudável consigo mesmo.

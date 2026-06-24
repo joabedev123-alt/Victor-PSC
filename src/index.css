@@ -289,10 +289,17 @@ img {
   /* Specific overrides to avoid centering lists or specific texts if needed, 
      but generally text-center on mobile looks good for a grid-collapsed layout. */
 
-  /* Reduce image container heights on mobile */
+  /* Reduce image container heights on mobile while preventing cuts */
   [style*="height: 600px"], [style*="height: 550px"], [style*="height: 500px"], [style*="height: 650px"], [style*="height: 400px"], [style*="height: 300px"],
   [style*="height:600px"], [style*="height:550px"], [style*="height:500px"], [style*="height:650px"], [style*="height:400px"], [style*="height:300px"] {
-    height: 300px !important;
+    height: auto !important;
+  }
+
+  [style*="height: 600px"] img, [style*="height: 550px"] img, [style*="height: 500px"] img, [style*="height: 650px"] img, [style*="height: 400px"] img, [style*="height: 300px"] img,
+  [style*="height:600px"] img, [style*="height:550px"] img, [style*="height:500px"] img, [style*="height:650px"] img, [style*="height:400px"] img, [style*="height:300px"] img {
+    height: auto !important;
+    max-height: 450px !important;
+    object-fit: contain !important;
   }
 
   /* Reduce large paddings for mobile screens */

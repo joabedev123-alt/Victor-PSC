@@ -74,8 +74,8 @@ const Psicoterapia = () => {
       <section className="section">
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
           <FadeUp>
-            <div style={{ height: '600px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.03)' }}>
-              <img src="/Profissionais/Fotos pessoais/5FBA80EC-0AEB-415C-95CC-D45D31868D22.png" alt="O que é Psicoterapia" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.03)', display: 'flex', justifyContent: 'center', backgroundColor: 'var(--color-bg-main)' }}>
+              <img src="/Profissionais/Fotos pessoais/5FBA80EC-0AEB-415C-95CC-D45D31868D22.png" alt="O que é Psicoterapia" style={{ width: '100%', maxHeight: '600px', height: 'auto', objectFit: 'contain', marginTop: '40px' }} />
             </div>
           </FadeUp>
           <FadeUp delay={0.2}>
